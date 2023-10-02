@@ -1,4 +1,4 @@
-# Real-Time-Power-BI-Dashboard-Using-Azure-Event-Hub-Azure-Stream-Analytics
+# Stream Real Time Stock Data in Azure Event Hubs & Azure Stream Analytics
 
 ## Introduction
 

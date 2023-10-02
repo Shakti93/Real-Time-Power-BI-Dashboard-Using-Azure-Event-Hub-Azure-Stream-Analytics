@@ -66,28 +66,28 @@ Import the necessary Python libraries for program development.
 ### Python Program to Send Stock Information to an Azure Event Hub
 Develop the Python program with functions to retrieve stock information and send it to the Azure Event Hub. Ensure that the program functions correctly, and verify data transmission by checking the Azure Stream Analytics Job in the Query section.
 
+```
+def get_stock_data(stockName):
+  stock_pull = si.get_quote_table(stockName)
+  stock_df = pd.DataFrame([stock_pull])
+  return stock_df.to_dict('record')
+datetime.now()
+get_stock_data('AAPL')
 
-`def get_stock_data(stockName):
-      stock_pull = si.get_quote_table(stockName)
-      stock_df = pd.DataFrame([stock_pull])
-      return stock_df.to_dict('record')
-  datetime.now()
-  get_stock_data('AAPL')`
-
-  `async def run():
-    while True:
-        await asyncio.sleep(5)
-        producer = EventHubProducerClient.from_connection_string(conn_str=con_string, eventhub_name=eventhub_name)
-        async with producer:
-            # Create a batch.
-            event_data_batch = await producer.create_batch()
-            # Add events to the batch.
-            event_data_batch.add(EventData(json.dumps(get_stock_data('AAPL'))))
-            # Send the batch of events to the event hub.
-            await producer.send_batch(event_data_batch)
-            print('Stock Data Sent To Azure Event Hub')`
+async def run():
+  while True:
+      await asyncio.sleep(5)
+      producer = EventHubProducerClient.from_connection_string(conn_str=con_string, eventhub_name=eventhub_name)
+      async with producer:
+          # Create a batch.
+          event_data_batch = await producer.create_batch()
+          # Add events to the batch.
+          event_data_batch.add(EventData(json.dumps(get_stock_data('AAPL'))))
+          # Send the batch of events to the event hub.
+          await producer.send_batch(event_data_batch)
+          print('Stock Data Sent To Azure Event Hub')`
   
-`loop = asyncio.get_event_loop()
+loop = asyncio.get_event_loop()
 try:
   loop.run_until_complete(run())
   loop.run_forever()
@@ -95,7 +95,8 @@ except KeyboardInterrupt:
   pass
 finally:
   print('Closing Loop Now')
-  loop.close()`
+  loop.close()
+```
 
 ## Building the Power BI Dashboard
 In this section, we create a Power BI dashboard using real-time data received through the Azure Event Hub.

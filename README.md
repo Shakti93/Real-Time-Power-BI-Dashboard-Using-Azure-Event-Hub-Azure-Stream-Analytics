@@ -46,20 +46,20 @@ The Python program is responsible for retrieving stock information and sending i
 
 Import the necessary Python libraries for program development.
 
-  `from dis import findlinestarts
-  import pandas as pd
-  import json
-  from yahoo_fin import stock_info as si
-  from azure.eventhub.aio import EventHubProducerClient
-  from azure.eventhub import EventData
-  from azure.eventhub.exceptions import EventHubError
-  import asyncio
-  import requests
-  import nest_asyncio
-  from datetime import datetime
-  import warnings
-  warnings.filterwarnings("ignore", category=FutureWarning)
-  warnings.filterwarnings("ignore", category=DeprecationWarning)`
+  `from dis import findlinestarts`
+  `import pandas as pd`
+  `import json`
+  `from yahoo_fin import stock_info as si`
+  `from azure.eventhub.aio import EventHubProducerClient`
+  `from azure.eventhub import EventData`
+  `from azure.eventhub.exceptions import EventHubError`
+  `import asyncio`
+  `import requests`
+  `import nest_asyncio`
+  `from datetime import datetime`
+  `import warnings`
+  `warnings.filterwarnings("ignore", category=FutureWarning)`
+  `warnings.filterwarnings("ignore", category=DeprecationWarning)`
 
 ### Python Program to Send Stock Information to an Azure Event Hub
 Develop the Python program with functions to retrieve stock information and send it to the Azure Event Hub. Ensure that the program functions correctly, and verify data transmission by checking the Azure Stream Analytics Job in the Query section.

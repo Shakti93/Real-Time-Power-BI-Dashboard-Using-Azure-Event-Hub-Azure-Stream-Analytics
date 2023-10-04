@@ -113,6 +113,9 @@ Configure the output options under "Job Topology" to add the Power BI option. Pr
 4. Choose the "Custom Streaming Data" option and select the dataset created using Azure Stream Analytics Job.
 5. Customize your dashboard with various components such as Cards, Line Charts, etc., based on your specific requirements.
 
+![Real TIme Apple Dashboard](https://github.com/Shakti93/Real-Time-Power-BI-Dashboard-Using-Azure-Event-Hub-Azure-Stream-Analytics/assets/84408451/e7f3b5f9-1188-4d9f-82f8-63a68056f0d1)
+
+
 ## Conclusion
 
 This project report has detailed the process of creating a real-time Power BI dashboard using Azure Event Hub and Azure Stream Analytics. By following the steps outlined in this report, users can effectively integrate real-time stock data into a dynamic and informative Power BI dashboard, enabling data-driven decision-making.
